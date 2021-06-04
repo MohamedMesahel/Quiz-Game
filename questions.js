@@ -35,8 +35,8 @@ var questionIndex = 0;
 // Declared variables
 var mainMessage = document.querySelector("#main-message");
 var centerMessage = document.querySelector("#center-message");
-var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
+var currentTime = document.querySelector("#timer-count");
 
 // Seconds left is 15 seconds per question:
 var secondsLeft = 76;
