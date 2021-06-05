@@ -17,4 +17,4 @@ In order to play the Game and store your Highscores, you need to download the zi
 [Quiz-Game](https://mohamedmesahel.github.io/Quiz-Game/)
 
 ### Game screenshot
-![](../Quiz-Game/assets/img/Quizgame.png)
+![](./assets/img/Quizgame.png)
