@@ -30,21 +30,14 @@ var questions = [
 // Declared variables
 var score = 0;
 var questionIndex = 0;
-
-// Start working code 
-// Declared variables
 var mainMessage = document.querySelector("#main-message");
-var centerMessage = document.querySelector("#center-message");
+var questionsBlock = document.querySelector("#questionsBlock");
 var timer = document.querySelector("#startTime");
 var currentTime = document.querySelector("#timer-count");
-
-// Seconds left is 15 seconds per question:
 var secondsLeft = 76;
-// Holds interval time
 var holdInterval = 0;
-// Holds penalty time
-var penalty = 10;
-// Creates new element
+var penalty = 5;
+var answerText = "";
 var ulCreate = document.createElement("ul");
 
 // Triggers timer on button, shows user a display on the screen
@@ -68,20 +61,20 @@ timer.addEventListener("click", function () {
 // Renders questions and choices to page: 
 function render(questionIndex) {
     // Clears existing data 
-    centerMessage.innerHTML = "";
+    questionsBlock.innerHTML = "";
     ulCreate.innerHTML = "";
     // For loops to loop through all info in array
     for (var i = 0; i < questions.length; i++) {
         // Appends question title only
         var userQuestion = questions[questionIndex].title;
         var userChoices = questions[questionIndex].choices;
-        centerMessage.textContent = userQuestion;
+        questionsBlock.textContent = userQuestion;
     }
     // New for each for question choices
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
-        centerMessage.appendChild(ulCreate);
+        questionsBlock.appendChild(ulCreate);
         ulCreate.appendChild(listItem);
         listItem.addEventListener("click", (compare));
     })
@@ -103,8 +96,9 @@ function compare(event) {
             // Will deduct -5 seconds off secondsLeft for wrong answers
             secondsLeft = secondsLeft - penalty;
             createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
+            
         }
-
+        
     }
     // Question Index determines number question user is on
     questionIndex++;
@@ -116,12 +110,12 @@ function compare(event) {
     } else {
         render(questionIndex);
     }
-    questionsDiv.appendChild(createDiv);
+    questionsBlock.appendChild(createDiv);
 
 }
-// All done will append last page
+
 function allDone() {
-    questionsDiv.innerHTML = "";
+    questionsBlock.innerHTML = "";
     currentTime.innerHTML = "";
 
     // Heading:
@@ -129,13 +123,13 @@ function allDone() {
     createH1.setAttribute("id", "createH1");
     createH1.textContent = "All Done!"
 
-    centerMessage.appendChild(createH1);
+    questionsBlock.appendChild(createH1);
 
     // Paragraph
     var createP = document.createElement("p");
     createP.setAttribute("id", "createP");
 
-    centerMessage.appendChild(createP);
+    questionsBlock.appendChild(createP);
 
     // Calculates time remaining and replaces it with score
     if (secondsLeft >= 0) {
@@ -144,15 +138,14 @@ function allDone() {
         clearInterval(holdInterval);
         createP.textContent = "Your final score is: " + timeRemaining;
 
-        centerMessage.appendChild(createP2);
+        questionsBlock.appendChild(createP2);
     }
-
-    // Label
+// Label
     var createLabel = document.createElement("label");
     createLabel.setAttribute("id", "createLabel");
     createLabel.textContent = "Enter your initials: ";
 
-    centerMessage.appendChild(createLabel);
+    questionsBlock.appendChild(createLabel);
 
     // input
     var createInput = document.createElement("input");
@@ -160,7 +153,7 @@ function allDone() {
     createInput.setAttribute("id", "initials");
     createInput.textContent = "";
 
-    centerMessage.appendChild(createInput);
+    questionsBlock.appendChild(createInput);
 
     // submit
     var createSubmit = document.createElement("button");
@@ -168,7 +161,7 @@ function allDone() {
     createSubmit.setAttribute("id", "Submit");
     createSubmit.textContent = "Submit";
 
-    centerMessage.appendChild(createSubmit);
+    questionsBlock.appendChild(createSubmit);
 
     // Event listener to capture initials and local storage for initials and score
     createSubmit.addEventListener("click", function () {
@@ -194,8 +187,9 @@ function allDone() {
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
             // Travels to final page
-            window.location.replace("./Highscores.html");
+            window.location.replace("./HighScores.html");
         }
     });
+
 
 }

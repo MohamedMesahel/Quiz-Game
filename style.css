@@ -1,7 +1,9 @@
+
+/* Declare Globale */
 * {
     box-sizing: border-box;
   }
-
+/* Header */
 header {
     display: flex;
     flex-wrap: wrap;
@@ -9,94 +11,67 @@ header {
     align-items: center;
     padding: 5%;
     background-color: beige;
-    color: black;
 }
 
 nav a {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    color: blueviolet;
+    color: rgb(255, 0, 140);
     font-weight: bold;
     font-size: 120%;
     margin-top: 2%;
     text-decoration: none;
 }
-
+         /* Timer  */
 .time-box {
     display: flex;
     justify-content: flex-end;
+    color: rgb(255, 0, 140);
     margin-right: 10%;
     margin-bottom: 5%;
-    font: 1em sans-serif;
+    font: 1em sans-serif bolder;
 }
+      /* Main Card */
 main {
+ background-color:	#FFFFE0;
+  border: 2px solid #eceff1;
+  border-radius: 15px;
+  box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
+    rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
+  margin: 40px 20px;
+  padding: 20px;
+  width: 70vw;
+  float: center;
+  }
+#mainMessage {
     display: flex;
     position: relative;
     flex: 1 1 0;
     max-width: 1200px;
     margin: 2% auto;
-  }
-
+}
 
 main h1 {
     font-size: 150%;
     color: black;
     text-align: center;
 }
-
-button {
+/* Start Button & Game */
+button, #goBack, #clear, #Submit {
     justify-content: center;
     border-radius: 8px;
     padding: 1% 2%;
     color: #fff;
     background-color: #b40ec4;
-    margin-left: 50%;
+    margin-left: 40%;
     margin-top: 5%;
     outline: none;
     cursor: pointer;
+    font-size: 120%;
+
   }
-
-  #goBack {
-    background-color: purple;
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: white;
-    top: 30%;
-    left: 55%;
-    width: auto;
-    text-align: center;
-    text-decoration: none;
-}
-
-
-
-#clear {
-    background-color: purple;
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: white;
-    top: 30%;
-    right: 5%;
-    text-align: center;
-}
-
-
-textarea {
-    width: 90%;
-    margin: 20px;
-}
-
-#Submit {
-    background-color: purple;
-    margin-left: 33%;
-    padding: 15px 32px;
-    font-size: 20px;
-    color: white;
-}
-
+/* label area */
 label {
     margin-right: 10px;
 }
@@ -105,7 +80,7 @@ input {
     width: 50%;
     border: 1px solid lightgray;
 }
-
+/* List of Highscores */
 li {
     background-color: purple;
     margin-top: 10px;
@@ -120,50 +95,10 @@ li {
     border-top: 1px solid lightgray;
 }
 
+
 /* Start media queries */
-/* A Media Query max-width: 786px */
-@media screen and (max-width: 786px) {
-/* Resized content to fit 786px  */
-body {
-    max-width: 786px;
-}
-/* Resized main-content to fit 786px  */
-#mainMessage {
-position: relative;
-left: 20%;
-}
-
-a {
-margin-left: 20%;
-}
-#goBack {
-    
-    position: relative;
-    left: 55%;
-}
-
-#clear {
-    
-    position: relative;
-    right: 5%;
-    
-}
-}
-
-/* A Media Query max-width: 640px */
-@media screen and (max-width: 640px) {
-/* Resized content to fit 640px  */
-body {
-    min-width: 640px;
-}
-/* Resized main-content to fit 640px  */
-#mainMessage {
-position: relative;
-left: 10%;
-}
-a {
-  margin-left: 10%;
-}
-
-
-}
+@media only screen and (max-width: 800px) {
+    main {
+      width: 80vw;
+    }
+  }
