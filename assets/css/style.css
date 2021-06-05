@@ -32,7 +32,7 @@ nav a {
     margin-bottom: 5%;
     font: 1em sans-serif bolder;
 }
-      /* Main Card */
+/* Main Card */
 main {
  background-color:	#FFFFE0;
   border: 2px solid #eceff1;
@@ -71,7 +71,7 @@ button, #goBack, #clear, #Submit {
     font-size: 120%;
 
   }
-/* label area */
+/* label Space */
 label {
     margin-right: 10px;
 }

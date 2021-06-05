@@ -62,14 +62,14 @@ timer.addEventListener("click", function () {
 function render(questionIndex) {
     questionsBlock.innerHTML = "";
     ulCreate.innerHTML = "";
-    // For loops to loop through all Questions Variable 
+// For loops to loop through all Questions Variable 
     for (var i = 0; i < questions.length; i++) {
-        // Appending questions & Choices 
+// Appending questions & Choices 
         var userQuestion = questions[questionIndex].title;
         var userChoices = questions[questionIndex].choices;
         questionsBlock.textContent = userQuestion;
     }
-    // Declare New Process (for each) for questions choices
+// Declare New Process (for each) for questions choices
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
@@ -86,23 +86,23 @@ function compare(event) {
 
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
-        // Correct Answer condition 
+// Correct Answer condition 
         if (element.textContent == questions[questionIndex].answer) {
             score++;
             createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
-        // Correct Answer condition 
+// Correct Answer condition 
         } else {
-            // Will deduct -5 seconds off for wrong answers
+// Will deduct -5 seconds off for wrong answers
             secondsLeft = secondsLeft - penalty;
             createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
             
         }
         
     }
-    // Questions Index determines number question user is on
+// Questions Index determines number question user is on
     questionIndex++;
         
-    // Declare and append last page with player stats
+// Declare and append last page with player stats
     if (questionIndex >= questions.length) {
         allDone();
         createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
@@ -117,20 +117,20 @@ function allDone() {
     questionsBlock.innerHTML = "";
     currentTime.innerHTML = "";
 
-    // Header
+// Header
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
     createH1.textContent = "All Done!"
 
     questionsBlock.appendChild(createH1);
 
-    // Paragraph
+// Paragraph
     var createP = document.createElement("p");
     createP.setAttribute("id", "createP");
 
     questionsBlock.appendChild(createP);
 
-    // Calculates time remaining and replaces it with score
+// Calculates time remaining and replaces it with score
     if (secondsLeft >= 0) {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
