@@ -88,6 +88,7 @@ li {
     width: 80%;
     font-size: 18px;
     color: white;
+    cursor: pointer;
 }
 
 #createDiv {

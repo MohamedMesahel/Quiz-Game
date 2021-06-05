@@ -1,4 +1,3 @@
-// Jamie Morris Homework-4 Code Quiz 
 // Declared variables
 var highScore = document.querySelector("#highScore");
 var clear = document.querySelector("#clear");
@@ -9,7 +8,7 @@ clear.addEventListener("click", function () {
     localStorage.clear();
     location.reload();
 });
-// Retreives local stroage 
+// Retreive Data from local Stroage 
 var allScores = localStorage.getItem("allScores");
 allScores = JSON.parse(allScores);
 
@@ -23,7 +22,7 @@ if (allScores !== null) {
 
     }
 }
-// Event listener to move to index page
+// Event listener to Index page
 goBack.addEventListener("click", function () {
     window.location.replace("./index.html");
 });
