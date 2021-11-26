@@ -10,7 +10,11 @@ After answering all questions, or when time runs out, the player will be taken t
 
 I struggled a bit with connecting and organizing the Multibale files (html, css and js) as it's my first time working on a project with that many files and building every thing from scratch. I tried to be effecient with my code as much as possible.
 
+## How to play
+In order to play the Game and store your Highscores, you need to download the zip file. otherwise you can play online. Enjoy!! :)
+
 ### Link
 [Quiz-Game](https://mohamedmesahel.github.io/Quiz-Game/)
 
-![](../Quiz-Game/assets/img/Quizgame.png)
+### Game screenshot
+![](./assets/img/Quizgame.png)
