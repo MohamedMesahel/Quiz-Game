@@ -54,10 +54,12 @@ In order to play the Game and store your Highscores, you need to download the zi
 <p align="center">
   <img alt="Light Mode" src="./assets/img/webDemo.gif" width="60%"> 
 </p>
+
 ### Built With
 
 HTML and CSS, JavaScript.
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
