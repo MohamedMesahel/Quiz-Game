@@ -1,6 +1,6 @@
 // Declare Global variables
 // Declare Questions , Choices & Answers
-var questions = [
+const questions = [
     {
         title: "Commonly used data types DO NOT include:",
         choices: ["strings", "booleans", "alerts", "numbers"],
@@ -30,16 +30,16 @@ var questions = [
 ];
 
 // Declare Main Game variables
-var score = 0;
-var questionIndex = 0;
-var mainMessage = document.querySelector("#main-message");
-var questionsBlock = document.querySelector("#questionsBlock");
-var timer = document.querySelector("#startTime");
-var currentTime = document.querySelector("#timer-count");
-var secondsLeft = 75;
-var holdInterval = 0;
-var penalty = 5;
-var ulCreate = document.createElement("ul");
+let score = 0;
+let questionIndex = 0;
+let mainMessage = document.querySelector("#main-message");
+let questionsBlock = document.querySelector("#questionsBlock");
+let timer = document.querySelector("#startTime");
+let currentTime = document.querySelector("#timer-count");
+let secondsLeft = 75;
+let holdInterval = 0;
+let penalty = 5;
+let ulCreate = document.createElement("ul");
 
 // Declare Event listener & it's function to start the game 
 timer.addEventListener("click", function () {
@@ -63,8 +63,8 @@ function render(questionIndex) {
     questionsBlock.innerHTML = "";
     ulCreate.innerHTML = "";
 // For loops to loop through all Questions Variable 
-    for (var i = 0; i < questions.length; i++) {
 // Appending questions & Choices 
+    for (var i = 0; i < questions.length; i++) {
         var userQuestion = questions[questionIndex].title;
         var userChoices = questions[questionIndex].choices;
         questionsBlock.textContent = userQuestion;
